@@ -5,6 +5,8 @@ class ScodarTheme {
 
   static const kSecondaryColor = Color(0xFF263238);
 
+  static const kSecondaryColorDeem = Color(0x75263238);
+
   static TextTheme secondaryTextTheme = const TextTheme(
     bodyText1: TextStyle(
       fontSize: 18.0,

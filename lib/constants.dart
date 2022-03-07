@@ -6,3 +6,4 @@ const kBoldTextStyle = TextStyle(
     fontSize: 16.0, fontWeight: FontWeight.bold, color: Color(0xFF263238));
 
 const kPrimaryColor = Color(0xFF263238);
+const kBlue = Color(0xFFABC1D6);

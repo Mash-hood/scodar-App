@@ -119,10 +119,8 @@ class _MyHomePageState extends State<MyHomePage> {
         type: BottomNavigationBarType.fixed,
         backgroundColor: ScodarTheme.kPrimaryColor,
         elevation: 15,
-        unselectedItemColor: ScodarTheme.kSecondaryColor,
+        unselectedItemColor: ScodarTheme.kSecondaryColorDeem,
         selectedItemColor: ScodarTheme.kSecondaryColor,
-        iconSize: 20, //check if okay
-        selectedFontSize: 18,
         currentIndex: _presentIndex,
         onTap: _onTappingItem,
         items: const <BottomNavigationBarItem>[
