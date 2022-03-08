@@ -8,8 +8,9 @@ class BuyCredit extends StatefulWidget {
 }
 
 class _BuyCreditState extends State<BuyCredit> {
+  int? amount;
   final controllerAmount = TextEditingController();
-  String selectedNetwork = "MTN";
+  String? selectedNetwork;
 
   @override
   void dispose() {
@@ -38,34 +39,66 @@ class _BuyCreditState extends State<BuyCredit> {
                   label: "Amount in Naira", cont: controllerAmount),
             ),
             const SizedBox(height: 53),
-            Text("Select network",
-                style: ScodarTheme.secondaryTextTheme.bodyText1),
-            const SizedBox(height: 12),
-            Row(
-              children: [
-                SizedBox(width: 47),
-                DropdownButton<String>(
-                  value: selectedNetwork,
-                  icon: const Icon(Icons.arrow_drop_down_outlined),
-                  elevation: 16,
-                  style: const TextStyle(color: Colors.deepPurple),
-                  //   underline: Container(height: 2, color: Colors.deepPurpleAccent,),
-                  onChanged: (String? newValue) {
-                    setState(() {
-                      selectedNetwork = newValue!;
-                    });
-                  },
-                  hint: const Text("Pick network"),
-                  items: <String>['MTN', 'Globacom', 'Airtel', '9mobile']
-                      .map<DropdownMenuItem<String>>((String value) {
-                    return DropdownMenuItem<String>(
-                      value: value,
-                      child: Text(value),
-                    );
-                  }).toList(),
-                ),
-              ],
+            Text(
+              "Select network",
+              style: ScodarTheme.secondaryTextTheme.bodyText1,
+              textAlign: TextAlign.start,
             ),
+            const SizedBox(height: 20),
+            ButtonBar(
+              buttonHeight: 47,
+              children: <Widget>[
+                Container(
+                  height: 47,
+                  // width: 146,
+                  padding: const EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                        color: ScodarTheme.kSecondaryColor, width: 1),
+                  ),
+                  child: DropdownButton<String>(
+                    value: selectedNetwork,
+                    icon: const Icon(Icons.arrow_drop_down_outlined),
+                    elevation: 16,
+                    style: ScodarTheme.secondaryTextTheme.bodyText1,
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        selectedNetwork = newValue!;
+                      });
+                    },
+                    hint: const Text("Pick network"),
+                    items: <String>['MTN', 'Globacom', 'Airtel', '9mobile']
+                        .map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                  ),
+                ),
+                const SizedBox(width: 5),
+                Container(
+                  height: 47,
+                  width: 100,
+                  // padding: const EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    color: ScodarTheme.kSecondaryColor,
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                        color: ScodarTheme.kSecondaryColor, width: 1),
+                  ),
+                  child: const ElevatedButton(
+                      // style: ButtonStyle(backgroundColor: Colors.black),
+                      onPressed: null,
+                      child: Text(
+                        "send",
+                        style: TextStyle(color: ScodarTheme.kPrimaryColor),
+                      )),
+                ),
+                const SizedBox(width: 45)
+              ],
+            )
           ],
         ),
       ),
