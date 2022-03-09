@@ -11,6 +11,8 @@ class _BuyCreditState extends State<BuyCredit> {
   int? amount;
   final controllerAmount = TextEditingController();
   String? selectedNetwork;
+  bool multipleNetworks =
+      true; // for different layout composition for single and double sim cards
 
   @override
   void dispose() {
@@ -39,44 +41,56 @@ class _BuyCreditState extends State<BuyCredit> {
                   label: "Amount in Naira", cont: controllerAmount),
             ),
             const SizedBox(height: 53),
-            Text(
-              "Select network",
-              style: ScodarTheme.secondaryTextTheme.bodyText1,
-              textAlign: TextAlign.start,
+            SizedBox(
+              width: 270,
+              height: 20,
+              child: multipleNetworks
+                  ? Text(
+                      "Select network",
+                      style: ScodarTheme.secondaryTextTheme.bodyText1,
+                      textAlign: TextAlign.start,
+                    )
+                  : null,
             ),
             const SizedBox(height: 20),
             ButtonBar(
               buttonHeight: 47,
               children: <Widget>[
-                Container(
-                  height: 47,
-                  // width: 146,
-                  padding: const EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(
-                        color: ScodarTheme.kSecondaryColor, width: 1),
-                  ),
-                  child: DropdownButton<String>(
-                    value: selectedNetwork,
-                    icon: const Icon(Icons.arrow_drop_down_outlined),
-                    elevation: 16,
-                    style: ScodarTheme.secondaryTextTheme.bodyText1,
-                    onChanged: (String? newValue) {
-                      setState(() {
-                        selectedNetwork = newValue!;
-                      });
-                    },
-                    hint: const Text("Pick network"),
-                    items: <String>['MTN', 'Globacom', 'Airtel', '9mobile']
-                        .map<DropdownMenuItem<String>>((String value) {
-                      return DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(value),
-                      );
-                    }).toList(),
-                  ),
-                ),
+                multipleNetworks
+                    ? Container(
+                        height: 47,
+                        // width: 146,
+                        padding: const EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(
+                              color: ScodarTheme.kSecondaryColor, width: 1),
+                        ),
+                        child: DropdownButton<String>(
+                          value: selectedNetwork,
+                          icon: const Icon(Icons.arrow_drop_down_outlined),
+                          elevation: 16,
+                          style: ScodarTheme.secondaryTextTheme.bodyText1,
+                          onChanged: (String? newValue) {
+                            setState(() {
+                              selectedNetwork = newValue!;
+                            });
+                          },
+                          hint: const Text("Pick network"),
+                          items: <String>[
+                            'MTN',
+                            'Globacom',
+                            'Airtel',
+                            '9mobile'
+                          ].map<DropdownMenuItem<String>>((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(value),
+                            );
+                          }).toList(),
+                        ),
+                      )
+                    : const SizedBox(height: 47, width: 146),
                 const SizedBox(width: 5),
                 Container(
                   height: 47,
@@ -90,7 +104,8 @@ class _BuyCreditState extends State<BuyCredit> {
                   ),
                   child: const ElevatedButton(
                       // style: ButtonStyle(backgroundColor: Colors.black),
-                      onPressed: null,
+                      onPressed:
+                          null, // method to be implemented during the backend part
                       child: Text(
                         "send",
                         style: TextStyle(color: ScodarTheme.kPrimaryColor),
