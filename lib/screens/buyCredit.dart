@@ -31,7 +31,7 @@ class _BuyCreditState extends State<BuyCredit> {
           children: <Widget>[
             const SizedBox(height: 120),
             Text("Please enter an amount to \npurchase",
-                style: ScodarTheme.secondaryTextTheme.headline3,
+                style: ScodarTheme2.lightTextTheme.subtitle1,
                 textAlign: TextAlign.center),
             const SizedBox(height: 25),
             SizedBox(
@@ -47,7 +47,7 @@ class _BuyCreditState extends State<BuyCredit> {
               child: multipleNetworks
                   ? Text(
                       "Select network",
-                      style: ScodarTheme.secondaryTextTheme.bodyText1,
+                      style: ScodarTheme2.lightTextTheme.bodyText1,
                       textAlign: TextAlign.start,
                     )
                   : null,
@@ -64,19 +64,22 @@ class _BuyCreditState extends State<BuyCredit> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           border: Border.all(
-                              color: ScodarTheme.kSecondaryColor, width: 1),
+                              color: ScodarTheme2.secondaryColor, width: 1),
                         ),
                         child: DropdownButton<String>(
                           value: selectedNetwork,
                           icon: const Icon(Icons.arrow_drop_down_outlined),
                           elevation: 16,
-                          style: ScodarTheme.secondaryTextTheme.bodyText1,
+                          style: ScodarTheme2.lightTextTheme.button,
                           onChanged: (String? newValue) {
                             setState(() {
                               selectedNetwork = newValue!;
                             });
                           },
-                          hint: const Text("Pick network"),
+                          hint: Text(
+                            "Pick network",
+                            style: ScodarTheme2.lightTextTheme.button,
+                          ),
                           items: <String>[
                             'MTN',
                             'Globacom',
@@ -97,19 +100,20 @@ class _BuyCreditState extends State<BuyCredit> {
                   width: 100,
                   // padding: const EdgeInsets.all(5),
                   decoration: BoxDecoration(
-                    color: ScodarTheme.kSecondaryColor,
+                    color: ScodarTheme2.secondaryColor,
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(
-                        color: ScodarTheme.kSecondaryColor, width: 1),
+                        color: ScodarTheme2.secondaryColor, width: 1),
                   ),
-                  child: const ElevatedButton(
-                      // style: ButtonStyle(backgroundColor: Colors.black),
-                      onPressed:
-                          null, // method to be implemented during the backend part
-                      child: Text(
-                        "send",
-                        style: TextStyle(color: ScodarTheme.kPrimaryColor),
-                      )),
+                  child: ElevatedButton(
+                    // style: ButtonStyle(backgroundColor: Colors.black),
+                    onPressed:
+                        null, // method to be implemented during the backend part
+                    child: Text(
+                      "send",
+                      style: ScodarTheme2.darkTextTheme.button,
+                    ),
+                  ),
                 ),
                 const SizedBox(width: 45)
               ],

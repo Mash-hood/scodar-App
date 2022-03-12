@@ -31,12 +31,11 @@ class _CheckBalanceState extends State<CheckBalance> {
                     children: <Widget>[
                       Text(
                         "Your MTN Pulse main bal:N792.02. You do not have Pulse bonuses. \nNEW! Enjoy 1.5GB for just N5.00. Dial \n*406**2# \nto buy. Valid for 7 days",
-                        style: ScodarTheme.secondaryTextTheme.bodyText1,
+                        style: ScodarTheme2.lightTextTheme.bodyText1,
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(height: 10),
-                      Text("ok",
-                          style: ScodarTheme.secondaryTextTheme.bodyText2),
+                      Text("ok", style: ScodarTheme2.lightTextTheme.bodyText2),
                     ],
                   ),
                 ),
@@ -60,7 +59,7 @@ class _CheckBalanceState extends State<CheckBalance> {
                     child: Center(
                         child: Text(
                       "SIM 1",
-                      style: ScodarTheme.secondaryTextTheme.headline2,
+                      style: ScodarTheme2.lightTextTheme.headline2,
                     )),
                   ),
                 ),
@@ -76,7 +75,7 @@ class _CheckBalanceState extends State<CheckBalance> {
                             bottomRight: Radius.circular(50))),
                     child: Center(
                         child: Text("SIM 2",
-                            style: ScodarTheme.secondaryTextTheme.headline2)),
+                            style: ScodarTheme2.lightTextTheme.headline2)),
                   ),
                 ),
                 const SizedBox(width: 19),

@@ -12,14 +12,18 @@ class ScodarApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    final ThemeData theme = ThemeData();
+    final theme = ScodarTheme2.light();
     return MaterialApp(
       title: 'Scodar Mobile Application',
       debugShowCheckedModeBanner: false,
-      theme: theme.copyWith(
+      theme: theme,
+
+      /*theme.copyWith(
           colorScheme: theme.colorScheme.copyWith(
               primary: ScodarTheme.kPrimaryColor,
               secondary: ScodarTheme.kSecondaryColor)),
+      */
+
       routes: {
         '/': (context) => const MyHomePage(title: "SCODAR"),
         '/mainscreen': (context) => MainScreen(),

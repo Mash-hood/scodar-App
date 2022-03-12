@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ScodarTheme {
+/*
+ class ScodarTheme {
   static const kPrimaryColor = Color(0xFFC4C4C4);
 
   static const kSecondaryColor = Color(0xFF263238);
@@ -43,66 +44,186 @@ class ScodarTheme {
   );
 }
 
+ */
+
 class ScodarTheme2 {
-  static TextTheme BlackTextTheme = TextTheme(
+  static const secondaryColor = Color(0xFF263238);
+  static const secondaryColorDeem = Color(0x75263238);
+  static const colourWhite = Colors.white;
+  static const colourBlack = Colors.black;
+  static const primaryColor = Color(0xFFC4C4C4);
+
+  static TextTheme lightTextTheme = TextTheme(
     headline1: GoogleFonts.montserrat(
         fontSize: 97,
         fontWeight: FontWeight.w300,
         letterSpacing: -1.5,
-        color: Colors.black),
+        color: colourBlack),
     headline2: GoogleFonts.montserrat(
         fontSize: 61,
         fontWeight: FontWeight.w300,
         letterSpacing: -0.5,
-        color: Colors.black),
+        color: colourBlack),
     headline3: GoogleFonts.montserrat(
-        fontSize: 48, fontWeight: FontWeight.w400, color: Colors.black),
+        fontSize: 48, fontWeight: FontWeight.w400, color: colourBlack),
     headline4: GoogleFonts.montserrat(
         fontSize: 34,
         fontWeight: FontWeight.w400,
         letterSpacing: 0.25,
-        color: Colors.black),
+        color: colourBlack),
     headline5: GoogleFonts.montserrat(
-        fontSize: 24, fontWeight: FontWeight.w400, color: Colors.black),
+        fontSize: 24, fontWeight: FontWeight.w400, color: colourBlack),
     headline6: GoogleFonts.montserrat(
         fontSize: 20,
         fontWeight: FontWeight.w500,
         letterSpacing: 0.15,
-        color: Colors.black),
+        color: colourBlack),
     subtitle1: GoogleFonts.montserrat(
         fontSize: 16,
         fontWeight: FontWeight.w400,
         letterSpacing: 0.15,
-        color: Colors.black),
+        color: colourBlack),
     subtitle2: GoogleFonts.montserrat(
         fontSize: 14,
         fontWeight: FontWeight.w500,
         letterSpacing: 0.1,
-        color: Colors.black),
+        color: colourBlack),
     bodyText1: GoogleFonts.montserrat(
         fontSize: 16,
         fontWeight: FontWeight.w400,
         letterSpacing: 0.5,
-        color: Colors.black),
+        color: colourBlack),
     bodyText2: GoogleFonts.montserrat(
         fontSize: 14,
         fontWeight: FontWeight.w400,
         letterSpacing: 0.25,
-        color: Colors.black),
+        color: colourBlack),
     button: GoogleFonts.montserrat(
         fontSize: 14,
         fontWeight: FontWeight.w500,
         letterSpacing: 1.25,
-        color: Colors.black),
+        color: colourBlack),
     caption: GoogleFonts.montserrat(
         fontSize: 12,
         fontWeight: FontWeight.w400,
         letterSpacing: 0.4,
-        color: Colors.black),
+        color: colourBlack),
     overline: GoogleFonts.montserrat(
         fontSize: 10,
         fontWeight: FontWeight.w400,
         letterSpacing: 1.5,
-        color: Colors.black),
+        color: colourBlack),
   );
+
+  static TextTheme darkTextTheme = TextTheme(
+    headline1: GoogleFonts.montserrat(
+        fontSize: 97,
+        fontWeight: FontWeight.w300,
+        letterSpacing: -1.5,
+        color: colourWhite),
+    headline2: GoogleFonts.montserrat(
+        fontSize: 61,
+        fontWeight: FontWeight.w300,
+        letterSpacing: -0.5,
+        color: colourWhite),
+    headline3: GoogleFonts.montserrat(
+        fontSize: 48, fontWeight: FontWeight.w400, color: colourWhite),
+    headline4: GoogleFonts.montserrat(
+        fontSize: 34,
+        fontWeight: FontWeight.w400,
+        letterSpacing: 0.25,
+        color: colourWhite),
+    headline5: GoogleFonts.montserrat(
+        fontSize: 24, fontWeight: FontWeight.w400, color: colourWhite),
+    headline6: GoogleFonts.montserrat(
+        fontSize: 20,
+        fontWeight: FontWeight.w500,
+        letterSpacing: 0.15,
+        color: colourWhite),
+    subtitle1: GoogleFonts.montserrat(
+        fontSize: 16,
+        fontWeight: FontWeight.w400,
+        letterSpacing: 0.15,
+        color: colourWhite),
+    subtitle2: GoogleFonts.montserrat(
+        fontSize: 14,
+        fontWeight: FontWeight.w500,
+        letterSpacing: 0.1,
+        color: colourWhite),
+    bodyText1: GoogleFonts.montserrat(
+        fontSize: 16,
+        fontWeight: FontWeight.w400,
+        letterSpacing: 0.5,
+        color: colourWhite),
+    bodyText2: GoogleFonts.montserrat(
+        fontSize: 14,
+        fontWeight: FontWeight.w400,
+        letterSpacing: 0.25,
+        color: colourWhite),
+    button: GoogleFonts.montserrat(
+        fontSize: 14,
+        fontWeight: FontWeight.w500,
+        letterSpacing: 1.25,
+        color: colourWhite),
+    caption: GoogleFonts.montserrat(
+        fontSize: 12,
+        fontWeight: FontWeight.w400,
+        letterSpacing: 0.4,
+        color: colourWhite),
+    overline: GoogleFonts.montserrat(
+        fontSize: 10,
+        fontWeight: FontWeight.w400,
+        letterSpacing: 1.5,
+        color: colourWhite),
+  );
+
+  static ThemeData light() {
+    return ThemeData(
+      brightness: Brightness.light,
+      appBarTheme: const AppBarTheme(
+        foregroundColor: secondaryColor,
+        backgroundColor: primaryColor,
+      ),
+      floatingActionButtonTheme: const FloatingActionButtonThemeData(
+        foregroundColor: primaryColor,
+        backgroundColor: secondaryColor,
+      ),
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+        selectedItemColor: secondaryColor,
+        backgroundColor: primaryColor,
+      ),
+      textTheme: lightTextTheme,
+      iconTheme: const IconThemeData(
+        color: secondaryColor,
+      ),
+      drawerTheme: const DrawerThemeData(
+        backgroundColor: primaryColor,
+      ),
+    );
+  }
+
+  static ThemeData dark() {
+    return ThemeData(
+      brightness: Brightness.dark,
+      appBarTheme: AppBarTheme(
+        foregroundColor: Colors.white,
+        backgroundColor: Colors.grey[900],
+      ),
+      floatingActionButtonTheme: const FloatingActionButtonThemeData(
+        foregroundColor: Colors.white,
+        backgroundColor: Colors.green,
+      ),
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+        selectedItemColor: secondaryColor,
+        backgroundColor: primaryColor,
+      ),
+      textTheme: darkTextTheme,
+      iconTheme: const IconThemeData(
+        color: primaryColor,
+      ),
+      drawerTheme: const DrawerThemeData(
+        backgroundColor: primaryColor,
+      ),
+    );
+  }
 }

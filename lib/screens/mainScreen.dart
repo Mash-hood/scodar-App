@@ -16,7 +16,7 @@ class MainScreen extends StatelessWidget {
               height: 60,
             ),
             Text("Place the camera over the voucher",
-                style: ScodarTheme.secondaryTextTheme.headline3),
+                style: ScodarTheme2.lightTextTheme.bodyText1),
             const SizedBox(height: 10),
             //stacking should work instead of this, show decorated paint when light is on
             Container(
@@ -43,7 +43,7 @@ class MainScreen extends StatelessWidget {
               height: 5,
             ),
             Text("Press the touch for more light",
-                style: ScodarTheme.secondaryTextTheme.headline3),
+                style: ScodarTheme2.lightTextTheme.bodyText1),
           ],
         ),
       ),

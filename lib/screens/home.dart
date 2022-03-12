@@ -31,7 +31,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ScodarTheme.kPrimaryColor,
+      backgroundColor: ScodarTheme2.primaryColor,
       appBar: AppBar(
         leading: Row(
           children: [
@@ -42,20 +42,20 @@ class _MyHomePageState extends State<MyHomePage> {
         leadingWidth: 78,
         title: Text(
           widget.title,
-          style: const TextStyle(color: ScodarTheme.kSecondaryColor),
+          //  style: const TextStyle(color: ScodarTheme.kSecondaryColor),
         ),
-        actionsIconTheme:
-            const IconThemeData(color: ScodarTheme.kSecondaryColor),
+        // actionsIconTheme:
+        //   const IconThemeData(color: ScodarTheme.kSecondaryColor),
       ),
       endDrawer: Drawer(
-        backgroundColor: ScodarTheme.kPrimaryColor,
+        // backgroundColor: ScodarTheme.kPrimaryColor,
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
             UserAccountsDrawerHeader(
               currentAccountPicture: const Icon(
                 Icons.account_circle,
-                color: ScodarTheme.kPrimaryColor,
+                color: ScodarTheme2.primaryColor,
                 size: 96,
               ),
               accountName: Row(
@@ -68,13 +68,14 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               accountEmail: const Text("accountEmail@gmail.com"),
               decoration: const BoxDecoration(
-                color: ScodarTheme.kSecondaryColor,
+                color: ScodarTheme2.secondaryColor,
               ),
             ),
             // DrawerHeader(child: child)
             ListTile(
               leading: const Icon(Icons.home,
-                  color: ScodarTheme.kSecondaryColor, size: 24),
+                  // color: ScodarTheme.kSecondaryColor,
+                  size: 24),
               title: const Text('Home'),
               onTap: () {
                 Navigator.of(context).pop();
@@ -83,7 +84,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ListTile(
               leading: const Icon(Icons.credit_card,
-                  color: ScodarTheme.kSecondaryColor, size: 24),
+                  //color: ScodarTheme.kSecondaryColor,
+                  size: 24),
               title: const Text('Buy Credit'),
               onTap: () {
                 Navigator.of(context).pop();
@@ -92,7 +94,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ListTile(
               leading: const Icon(Icons.insert_chart,
-                  color: ScodarTheme.kSecondaryColor, size: 24),
+                  //  color: ScodarTheme.kSecondaryColor,
+                  size: 24),
               title: const Text('Credit Usage Statistics'),
               onTap: () {
                 Navigator.of(context).pop();
@@ -101,7 +104,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ListTile(
               leading: const Icon(Icons.settings,
-                  color: ScodarTheme.kSecondaryColor, size: 24),
+                  //  color: ScodarTheme.kSecondaryColor,
+                  size: 24),
               title: const Text('Settings'),
               onTap: () {
                 Navigator.pushNamed(context, '/setting');
@@ -109,7 +113,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const ListTile(
                 leading: Icon(Icons.message,
-                    color: ScodarTheme.kSecondaryColor, size: 24),
+                    //  color: ScodarTheme.kSecondaryColor,
+                    size: 24),
                 title: Text('About')),
           ],
         ),
@@ -117,10 +122,10 @@ class _MyHomePageState extends State<MyHomePage> {
       body: pages[_presentIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        backgroundColor: ScodarTheme.kPrimaryColor,
+        //backgroundColor: ScodarTheme.kPrimaryColor,
         elevation: 15,
-        unselectedItemColor: ScodarTheme.kSecondaryColorDeem,
-        selectedItemColor: ScodarTheme.kSecondaryColor,
+        unselectedItemColor: ScodarTheme2.secondaryColorDeem,
+        // selectedItemColor: ScodarTheme.kSecondaryColor,
         currentIndex: _presentIndex,
         onTap: _onTappingItem,
         items: const <BottomNavigationBarItem>[
