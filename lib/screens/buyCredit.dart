@@ -12,7 +12,7 @@ class _BuyCreditState extends State<BuyCredit> {
   final controllerAmount = TextEditingController();
   String? selectedNetwork;
   bool multipleNetworks =
-      true; // for different layout composition for single and double sim cards
+      false; // for different layout composition for single and double sim cards
 
   @override
   void dispose() {

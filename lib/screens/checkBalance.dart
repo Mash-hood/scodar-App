@@ -59,7 +59,7 @@ class _CheckBalanceState extends State<CheckBalance> {
                     child: Center(
                         child: Text(
                       "SIM 1",
-                      style: ScodarTheme2.lightTextTheme.headline2,
+                      style: ScodarTheme2.lightTextTheme.headline3,
                     )),
                   ),
                 ),
@@ -75,7 +75,7 @@ class _CheckBalanceState extends State<CheckBalance> {
                             bottomRight: Radius.circular(50))),
                     child: Center(
                         child: Text("SIM 2",
-                            style: ScodarTheme2.lightTextTheme.headline2)),
+                            style: ScodarTheme2.lightTextTheme.headline3)),
                   ),
                 ),
                 const SizedBox(width: 19),
